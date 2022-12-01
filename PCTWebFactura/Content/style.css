@@ -1,0 +1,773 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.buttoncls {
+    position: relative;
+    background: lightgrey;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+.tooltipMine {
+    position: absolute;
+    display: none;
+    bottom: 110%;
+    padding: 10px;
+    background-color: #333;
+    width: 183px;
+    border-radius: 3px;
+    font-size: 10px;
+    color: #eee;
+    animation: moveup 0.1s linear;
+}
+
+    .tooltipMine:after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        width: 155px;
+        left: 10%;
+        border-top: 5px solid #333;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid transparent;
+    }
+
+
+.btnMine:hover > .tooltipMine {
+    display: block;
+}
+
+@keyframes moveup {
+    0% {
+        transform: translateY(10px) rotate(25deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+body#general {
+    width: 100%;
+    background-image: url('../App_Images/bg copy.png');
+    background-repeat: repeat-x;
+    background-size: 100% 89%;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 20px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+}
+.cerrarSesion {
+    background-image: url('../App_Images/cerrar_1.png');
+}
+
+
+.hiddenDiv{
+    display: none !important;
+}
+
+.logopct {
+    background-image: url(../App_Images/logopct1.png);
+    background-size: 50px 50px;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.tituloHeader {
+    font-family: "Lucida Sans Unicode", "Trebuchet MS", Verdana, Arial;
+    text-align: center;
+    color: #fff;
+    padding: 0 0 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+    height: 20px;
+}
+
+.btnsLogin button {
+    height: 18px;
+}
+
+/*  Page  */
+
+.main-page {
+    margin: 0 10px;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+    flex-wrap: wrap;
+}
+
+.page {
+    /*zoom:110%;*/
+    margin: 0 10px;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.bloqueIzquierdo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-right: 30%;
+    margin-left: 20px;
+}
+
+.contentBloqueIzquierdo {
+    text-align: center;
+}
+
+    .contentBloqueIzquierdo p {
+        font-size: 35px;
+        line-height: 50px;
+    }
+
+    .contentBloqueIzquierdo a {
+        font-size: 11px;
+    }
+
+img#Image1 {
+    height: 33vh;
+    zoom: 76%;
+    margin-bottom: 40px;
+}
+
+
+
+.contentBloqueDerecho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 55vh;
+    justify-content: space-evenly;
+    margin-left: 17%;
+    width: 100%;
+}
+
+p.title {
+    font-size: 25px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 500;
+}
+
+p.subtitle {
+    font-size: 22px;
+    text-align: center;
+    line-height: 30px;
+}
+
+div.titulo {
+    margin-bottom: 2%;
+}
+
+span.titulo {
+    color: #306199;
+    margin: 0 auto 4px auto;
+    font-size: 13.3px;
+    margin-bottom: 27px;
+    font-weight: bold;
+}
+
+
+
+.estiloLabelsNegrita {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*button {
+    height: 18px;
+}*/
+
+.estilobtAyuda {
+    background-color: white;
+    border: 1px solid #1556FC;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #a3b8ed;
+    color: #0000FF;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    height: 21.1px;
+    width: 16px;
+    cursor: pointer;
+}
+
+label.login {
+    font-size: 15.2px;
+}
+
+.userInput,
+.psswrdInput {
+    margin-top: 20px;
+}
+
+input#user,
+input#password {
+    width: 220px;
+    font-size: 13px;
+    height: 27px;
+}
+
+input#tbDB,
+input#btVigencia {
+    margin-top: 50px;
+    width: 180px;
+    font-size: 13px;
+    height: 25px;
+}
+
+
+button#btIngresar,
+button#btLimpiar {
+    width: 120px;
+    height: 35px;
+    padding-bottom: 10px;
+    margin: 30px 20px;
+    border-radius: 5px;
+    background-color: rgb(46, 109, 204);
+    border: none;
+}
+
+    button#btIngresar:hover,
+    button#btLimpiar:hover {
+        background-color: rgb(46, 98, 176);
+    }
+
+    button#btIngresar:active,
+    button#btLimpiar:active {
+        background-color: rgb(40, 85, 154);
+        color: #f9f9f9;
+    }
+
+
+span.fecha {
+    font-size: 40px;
+}
+
+a {
+    color: blue;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+
+
+footer {
+    border-top: 2px solid #dddddd;
+    clear: both;
+    margin-top: 5px;
+}
+
+    footer p {
+        color: #999999;
+        font-size: 0.7em;
+        font-family: "Lucida Sans Unicode", "Trebuchet MS", Verdana, Arial;
+        letter-spacing: 1px;
+        margin-top: 3px;
+        text-align: center;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: #999999;
+    }
+
+@media only screen and (max-width: 990px) {
+    .page {
+        flex-direction: column;
+    }
+
+    .bloqueIzquierdo {
+        flex-direction: row;
+        margin: 0;
+        ;
+    }
+
+    img#Image1 {
+        height: 21vh;
+        /* margin-bottom: 40px; */
+        /* margin-left: 20px;*/
+    }
+
+    .contentBloqueIzquierdo {
+        margin-left: 31px;
+        text-align: center;
+    }
+
+    .contentBloqueDerecho {
+        margin-left: 0;
+    }
+}
+button#btnIngresar, button#btnLimpiar {
+    width: auto;
+    height: auto;
+}
+
+.containerMensaje {
+    border-spacing: 0ch;
+    width: 100%;
+}
+
+    .containerMensaje th {
+        background-color: #5d7b9d;
+        height: 20px;
+        width: 100%;
+        color: white;
+        font-size: 15px;
+        padding: 2px 0;
+        text-align:center;
+    }
+
+table.containerMensaje td {
+    color: rgb(96,104,130);
+    font-size: 10px;
+    padding: 15px 10px;
+}
+
+table.containerMensaje p {
+    padding-top: 5px;
+}
+
+
+td.checkBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+table.containerDatosGenerales {
+    border: 1px solid rgb(198, 198, 198);
+    width: 96%;
+    margin: 20px auto 20px auto;
+    border-collapse: inherit;
+}
+
+td.alineadoDerecha {
+    text-align: right;
+}
+
+p.titulo {
+    color: rgb(0, 83, 161);
+    font-size: 12px;
+    position: relative;
+    bottom: 9px;
+    left: 5px;
+    background-color: white;
+    width: 89px;
+    margin: 0;
+    font-weight: bolder;
+}
+
+table.datosGenerales {
+    width: 100%;
+    margin: 0px 0px 0px 6px;
+    position: relative;
+    bottom: 5px;
+    padding-left: 4px;
+}
+
+    table.datosGenerales td {
+        width: 100px;
+    }
+
+    table.datosGenerales span {
+        font-size: 12px;
+        font-weight: 600;
+        color: rgb(17, 51, 85);
+    }
+
+div.containerTextBox {
+    width: 98%;
+    margin: 0 auto 1% auto;
+}
+
+
+div.tituloObserv {
+    color: rgb(17, 51, 85);
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 1%;
+}
+
+div.commentsBox {
+    width: 109%;
+}
+
+    div.commentsBox textarea {
+        width: 90%;
+        overflow-y: scroll;
+        resize: none;
+        height: 100px;
+    }
+
+textarea::-webkit-scrollbar {
+    width: 20px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: rgb(200, 200, 200);
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: rgb(148, 148, 148);
+}
+
+    textarea::-webkit-scrollbar-thumb:hover {
+        background: rgb(114, 114, 114);
+    }
+        /*
+
+* {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0px;
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+*/
+.textlabels label
+{
+    font-size: 12px;
+}
+/*
+body#general {
+    width: 100%;
+    background-image: url('../App_Images/bg copy.png');
+    background-repeat: repeat-x;
+    background-size: 100% 89%;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 20px;
+    font-family: "Trebuchet MS", Verdana, Arial;
+}
+
+.principal {
+    width: 100%;
+}
+
+.contenidosBasicos {
+    position: inherit;
+    margin: 0 1%;
+    width: 98%;
+    top: 1px;
+}
+
+
+.logopct {
+    background-image: url(../App_Images/logopct1.png);
+    background-size: 50px 50px;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+.tituloHeader {
+    font-family: "Lucida Sans Unicode", "Trebuchet MS", Verdana, Arial;
+    text-align: center;
+    color: #fff;
+    padding: 0 0 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+    height: 20px;
+}
+
+
+.page {
+    margin: 0 10px;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 15%;
+    padding: 10px 10px;
+}
+
+.contenedorPrincipal {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cuadroLogin {
+    width: 720px !important;
+    position: relative;
+    height: 100%;
+    margin: 0 10%;
+    border: 1px #D5DFF4 solid;
+}
+
+div#SuperiorLoguin {
+    width: 99%;
+}
+
+.cuadroInternoLogin {
+    border: 1px solid rgb(206,205,205);
+    background-color: white;
+    margin: 2px 0px 0px 2px;
+    width: 100%;
+}
+
+.titulo {
+    color: #306199;
+    margin: 0 auto 4px auto;
+    width: 320px;
+}
+
+div.titulo span {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.imagenPrincipal {
+    left: 80px;
+    position: relative;
+}
+
+    .imagenPrincipal img {
+        height: 180px;
+        width: 180px;
+    }
+
+.contenedor1 {
+    border: 1px solid rgb(206,205,205);
+    height: 170px;
+    left: 61%;
+    line-height: 25px;
+    top: 3px;
+    position: relative;
+    width: 112%;
+}
+
+.nombre {
+    margin: 50px auto 0 auto;
+    width: 204px;
+}
+
+.textoBiseladoInterior {
+    border-radius: 5px;
+    color: #999999;
+    font-family: Consolas, sans-serif;
+    font-weight: normal;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: center;
+    text-shadow: 0 -1px 0 #333, 0 1px 0 #eaeaea;
+}
+
+div.nombre span {
+    font-size: 20px;
+}
+
+.testoBiseladoExterior {
+    border-radius: 5px;
+    color: #676363;
+    font-family: Consolas, sans-serif;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #333, -1px -1px 1px #eaeaea;
+}
+
+.contenedor2 {
+    margin: 0 auto 0 auto;
+    width: 300px;
+}
+
+    .contenedor2 p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+.btnsLogin button {
+    height: 18px;
+}
+
+.swal2-styled {
+    background-color: #5d7b9d !important;
+}
+
+div#InferiorLoguin {
+    background-color: white;
+    border: 1px solid rgb(206,205,205);
+    margin: 4px 0px 2px 2px;
+    width: 358px;
+}
+
+div#datosUsrPassw {
+    margin: 2px 0px 0px 12px;
+    position: relative;
+    width: 333px;
+}
+
+.estiloLbInfoAdicinal {
+    font-size: 9px;
+}
+
+.estiloLabelsNegrita {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.estilobtAyuda {
+    background-color: white;
+    border: 1px solid #1556FC;
+    color: #0000FF;
+    font-style: normal;
+    font-weight: bold;
+    height: 20px;
+    width: 15px;
+}
+
+div#botonesOp {
+    border: 1px solid rgb(187,186,186);
+    height: 60px;
+    line-height: 10px;
+    margin: 5px auto auto 30px;
+    padding-top: 5px;
+    width: 100px;
+}
+
+    div#botonesOp table {
+        width: 100%;
+    }
+
+.btIngresar {
+    margin: 2px 0px 0px 13px;
+}
+
+button#btnIngresar, button#btnLimpiar {
+    width: 70px;
+}
+
+.btLimpiar {
+    margin: 8px 0px 0px 13px;
+}
+
+div#datosBd {
+    background-color: white;
+    width: 333px;
+    position: relative;
+    margin: 2px 0px 2px 12px;
+}
+
+input#tbBD, input#tbVigencia {
+    width: 145px;
+}
+
+#InferiorLoguinDerecho {
+    line-height: 40px;
+}
+
+    #InferiorLoguinDerecho p {
+        text-align: center;
+    }
+
+span.fecha {
+    font-size: 40px;
+}
+
+a {
+    color: blue;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+
+footer {
+    clear: both;
+    margin-top: 5px;
+}
+
+    footer p {
+        color: #999999;
+        font-size: 0.7em;
+        font-family: "Lucida Sans Unicode", "Trebuchet MS", Verdana, Arial;
+        letter-spacing: 1px;
+        margin-top: 3px;
+        text-align: center;
+    }
+
+    footer a {
+        text-decoration: none;
+        color: #999999;
+    }
+
+
+
+
+.container {
+    width: 98%;
+    margin: 1% auto 10px auto;
+}
+
+table.strippedTable {
+    width: 93%;
+    margin: 2% auto 2% auto;
+    border-spacing: 0;
+}
+
+.strippedTable th {
+    background-color: #5d7b9d;
+    height: 16px;
+    color: white;
+    font-size: 11px;
+}
+
+.strippedTable tr:nth-child(even) {
+    background-color: #f7f5f3;
+}
+
+.strippedTable tr:nth-child(2) {
+    text-align: left;
+}
+
+.strippedTable td {
+    color: rgb(96,104,130);
+    font-size: 10px;
+    text-align: center;
+    height: 18px;
+}
+
+    }
+   */

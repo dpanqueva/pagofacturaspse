@@ -1,0 +1,174 @@
+﻿@model PCTWebComun.Entidades.COM.ComNit
+
+@{ ViewBag.Title = "Login"; }
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="~/Scripts/jquery.redirect.js"></script>
+
+<body id="general">
+
+    <header>
+        <div class="logopct"></div>
+        <div>
+            <h2>
+                <span class="tituloHeader">
+                    PCT Enterprise
+                </span>
+            </h2>
+        </div>
+        <div class="clear"></div>
+    </header>
+
+    <div class="main-page">
+        <div class="titulo">
+            <span id="ContentPlaceHolder1_Label5" class="titulo">
+                Para ingresar por favor digitar los datos requeridos.
+            </span>
+        </div>
+        <div class="page">
+            <section>
+                <div class="bloqueIzquierdo">
+                    <img id="Image1" src="~/App_Images/PCTAnimacion.gif" alt="">
+                    <div class="contentBloqueIzquierdo">
+                        <p>2022</p>
+                        <a href="http://www.pctltda.com">http://www.pctltda.com</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="contentBloqueDerecho">
+                    <div>
+                        <p class="title">PCT ENTERPRISE</p>
+                        <p class="subtitle">Facturación</p>
+                    </div>
+                    <div>
+                        <div class="userInput">
+                            <label for="user" id="" runat="server" class="login">Usuario</label>
+                            <div>
+                                <input type="text" name="user" id="txtNit">
+                                <button class="btnMine buttoncls">
+                                    ? <span class="tooltipMine">
+                                        Digite el nombre de usuario que le ha sido asignado para ingresar al aplicativo web de Facturación Ejemplo: PCTLTDA
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="psswrdInput">
+                            <label for="password" class="login">Contraseña</label>
+                            <div>
+                                <input type="password" name="password" id="txtCodUsuario">
+                                <button class="btnMine buttoncls">? <span class="tooltipMine">Digite la clave correspondiente a su nombre de usuario que le ha sido asignado para ingresar al aplicativo web de Facturación. Ejemplo: ****</span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="datosBd" style="display:none">
+
+                        <label for="BD" id="Label2" runat="server" class="login">Base de Datos</label>
+                        <input type="text" name="BD" id="tbDB" runat="server" value="@ViewData["baseDatos"]" disabled>
+
+
+                        <label for="vigencia" runat="server" class="login">Vigencia</label>
+                        <input type="text" name="vigencia" id="txtVigencia" runat="server" disabled>
+                        <button id="btAyudaVigencia" runat="server" class="estilobtAyuda">?</button>
+
+                    </div>
+
+                    <div>
+
+                        <button type="submit" id="btnIngresar" runat="server"
+                                class="btn btn-primary btnsLogin">
+                            Ingresar
+                        </button>
+                        <button id="btnLimpiar" runat="server" class="btn btn-primary btnsLogin">
+                            Limpiar
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<div>
+
+</div>
+<script type="text/javascript">
+      var basePath = "/PCTWEBFacturaDotNet";
+    // var basePath = "";
+
+    $(document).ready(function () {
+        fnCargarForm("/Login/cargarForm");
+        var btnLimpiar = document.getElementById("btnLimpiar");
+        var btnIngresar = document.getElementById("btnIngresar");
+        btnIngresar.addEventListener("click", function () {
+            var obj = new Object();
+            obj.CodPostal = document.getElementById("txtVigencia").value;
+            obj.nit = document.getElementById("txtNit").value;
+            obj.cod_usuario = document.getElementById("txtCodUsuario").value;
+            fnIngresar("/Login/Ingresar", obj);
+        }, false);
+        btnLimpiar.addEventListener("click", function () {
+            fnCleanModelData();
+        }, false);
+    });
+    // AJAX para ingresar el usuario
+    fnIngresar = function (UrlConsulta, obj) {
+        var respuesta;
+        $.ajax({
+            async: false,
+            type: 'POST',
+            url: basePath + UrlConsulta,
+            data: obj,
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.Codigo == 1) {
+                    window.location.replace(window.location.origin + '/PCTWEBFacturaDotNet/PagoFacturas');
+                } else {
+                    Swal.fire(
+                        'Error!',
+                        data.Mensaje,
+                        'error'
+                    )
+                }
+            },
+            error: function (response) {
+                vex.dialog.alert(response.message);
+                debugger;
+            }
+        });
+        return respuesta;
+    }
+    // AJAX para traer el schema de la DB
+    fnCargarForm = function (UrlConsulta) {
+        var respuesta;
+        $.ajax({
+            async: false,
+            type: 'POST',
+            url: basePath + UrlConsulta,
+            dataType: 'JSON',
+            success: function (data) {
+                console.log(data);
+                respuesta = data.Object;
+                fnSetModelData(data.Object);
+            },
+            error: function (response) {
+                vex.dialog.alert(response.message);
+                debugger;
+            }
+        });
+        return respuesta;
+    }
+    fnSetModelData = function (model = {}) {
+        debugger;
+        document.getElementById("txtNit").value = "";
+        document.getElementById("txtCodUsuario").value = "";
+        document.getElementById("txtVigencia").value = model.CodPostal;
+    };
+    fnCleanModelData = function () {
+        document.getElementById("txtNit").value = "";
+        document.getElementById("txtCodUsuario").value = "";
+
+    };
+</script>

@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33759678-AE22-4E08-BFE2-9F05D06163B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PCTWebComunNet</RootNamespace>
+    <AssemblyName>PCTWebComunNet</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.94.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Packages\ClosedXML.0.94.2\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Extensions.Mvc, Version=0.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Packages\ClosedXML.Extensions.Mvc.0.2.2\lib\net46\ClosedXML.Extensions.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>c:\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>c:\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>c:\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web">
+      <HintPath>c:\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>c:\program files\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\Packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.3.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\Packages\ExcelNumberFormat.1.0.3\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Packages\FastMember.1.3.0\lib\net45\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\app\PCT09\product\11.2.0\client_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PCTWebFactura">
+      <HintPath>..\PCTWebFactura\Publicacion\Bin\PCTWebFactura.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=7.1.13.41046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\Packages\FreeSpire.Doc.7.1.13\lib\net46\Spire.Doc.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.7.46, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\Packages\FreeSpire.Doc.7.1.13\lib\net46\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=5.1.23.18046, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\Packages\FreeSpire.Doc.7.1.13\lib\net46\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\Packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CamposQueries\FAC\FACCQCategoriaTipoIngresos.cs" />
+    <Compile Include="CamposQueries\FAC\FACCQProductos.cs" />
+    <Compile Include="CamposQueries\FAC\FACCQTipoFactura.cs" />
+    <Compile Include="CamposQueries\_Comun\ComCQNit.cs" />
+    <Compile Include="Consultas\FAC\FACConsCategoriasFacturasV1.cs" />
+    <Compile Include="Consultas\FAC\FACConsCategoriaTipoIngresos.cs" />
+    <Compile Include="Consultas\FAC\FACConsCategoriaVentaElementos.cs" />
+    <Compile Include="Consultas\FAC\FACConsCentroCostos.cs" />
+    <Compile Include="Consultas\FAC\FACConsCentroUsos.cs" />
+    <Compile Include="Consultas\FAC\FACConsCentroUsosV1.cs" />
+    <Compile Include="Consultas\FAC\FACConsConsultaFacturaV3.cs" />
+    <Compile Include="Consultas\FAC\FACConsConsultasFacturasV1.cs" />
+    <Compile Include="Consultas\FAC\FACConsControlPago.cs" />
+    <Compile Include="Consultas\FAC\FACConsCtrlRegimen.cs" />
+    <Compile Include="Consultas\FAC\FACConsCtrlTipoFactura.cs" />
+    <Compile Include="Consultas\FAC\FACConsDefIngFactura.cs" />
+    <Compile Include="Consultas\FAC\FACConsDesrecfactura.cs" />
+    <Compile Include="Consultas\FAC\FACConsDetalledesrecfactura.cs" />
+    <Compile Include="Consultas\FAC\FACConsDetalleParamefac.cs" />
+    <Compile Include="Consultas\FAC\FACConsDfactura.cs" />
+    <Compile Include="Consultas\FAC\FACConsDistIngFactura.cs" />
+    <Compile Include="Consultas\FAC\FACConsElementosReferencias.cs" />
+    <Compile Include="Consultas\FAC\FACConsFacConsultaWeb.cs" />
+    <Compile Include="Consultas\FAC\FACConsFactTasaRetributiva.cs" />
+    <Compile Include="Consultas\FAC\FACConsFormaPagoV1.cs" />
+    <Compile Include="Consultas\FAC\FACConsLocalizacion.cs" />
+    <Compile Include="Consultas\FAC\FACConsMFactura.cs" />
+    <Compile Include="Consultas\FAC\FACConsReferenciasservicio.cs" />
+    <Compile Include="Consultas\FAC\FACConsTotalesFacturaV2.cs" />
+    <Compile Include="Consultas\FAC\FACConsVwDetFacTasasV1.cs" />
+    <Compile Include="Consultas\FAC\FACConsClaseElementosServicios.cs" />
+    <Compile Include="Consultas\FAC\FACConsVwFacTasaImprV1.cs" />
+    <Compile Include="Consultas\_Comun\ComConsAcciones.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCategoriaventaElementos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsClaseBancos.cs" />
+    <Compile Include="Consultas\_Comun\COMConsClaseConceptos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsClaseCuentas.cs" />
+    <Compile Include="Consultas\_Comun\COMConsClaseDctos.cs" />
+    <Compile Include="Consultas\_Comun\COMConsClaseElementosservicios.cs" />
+    <Compile Include="Consultas\_Comun\COMConsClaseMonedas.cs" />
+    <Compile Include="Consultas\_Comun\COMConsClaseUnidades.cs" />
+    <Compile Include="Consultas\_Comun\ComConsComActividadesCreeNit.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComClasificacionCPC.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComClasificadores.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComFuentesCUIPO.cs" />
+    <Compile Include="Consultas\_Comun\ComConsComNitIngresos.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComPoliticaCUIPO.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComProgramaticoMGA.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComRangosValUVT.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComSeccionesCUIPO.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComSubProgramaMGA.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComTasasCambio.cs" />
+    <Compile Include="Consultas\_Comun\COMConsComValoresUVT.cs" />
+    <Compile Include="Consultas\_Comun\COMConsConsultaPrevioV2.cs" />
+    <Compile Include="Consultas\_Comun\ComConsContClaseFlujoEfectivo.cs" />
+    <Compile Include="Consultas\_Comun\ComConsControlCierres.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtasBancarias.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlApp.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlCartera.cs" />
+    <Compile Include="Consultas\_Comun\ComConsCtrlEntidad.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlImpresion.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlIntegracion.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlModulo.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlNotificacionMail.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlPresupuesto.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlRegimen.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlRenta.cs" />
+    <Compile Include="Consultas\_Comun\COMConsCtrlTesoreria.cs" />
+    <Compile Include="Consultas\_Comun\ComConsDepartamentos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsDNomina.cs" />
+    <Compile Include="Consultas\_Comun\ComConsEntidades.cs" />
+    <Compile Include="Consultas\_Comun\COMConsFirmas.cs" />
+    <Compile Include="Consultas\_Comun\COMConsFormatosGirosElectronicos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsHAuditoria.cs" />
+    <Compile Include="Consultas\_Comun\COMConsHTesoreria.cs" />
+    <Compile Include="Consultas\_Comun\COMConsMCompromiso.cs" />
+    <Compile Include="Consultas\_Comun\ComConsMeses.cs" />
+    <Compile Include="Consultas\_Comun\ComConsMunicipios.cs" />
+    <Compile Include="Consultas\_Comun\COMConsMypPrevioBancoPry.cs" />
+    <Compile Include="Consultas\_Comun\COMConsNotasTraslados.cs" />
+    <Compile Include="Consultas\_Comun\ComConsPaises.cs" />
+    <Compile Include="Consultas\_Comun\COMConsPptoGastos.cs" />
+    <Compile Include="Consultas\_Comun\COMConsPptoIngresos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsTipoNit.cs" />
+    <Compile Include="Consultas\_Comun\ComConsTransacciones.cs" />
+    <Compile Include="Consultas\_Comun\ComConsUsosGastos.cs" />
+    <Compile Include="Consultas\_Comun\COMConsUsosIngresos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsUsuariosPCT.cs" />
+    <Compile Include="Consultas\_Comun\AprConsClaseRecursos.cs" />
+    <Compile Include="Consultas\_Comun\ComClaseConsNit.cs" />
+    <Compile Include="Consultas\_Comun\ComConsActividadesCree.cs" />
+    <Compile Include="Consultas\_Comun\ComConsCategoriaTerceros.cs" />
+    <Compile Include="Consultas\_Comun\ComConsCentroCostos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsCuentas.cs" />
+    <Compile Include="Consultas\_Comun\ComConsClaseDesRecV1.cs" />
+    <Compile Include="Consultas\_Comun\ComConsClaseGastos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsClaseIngresos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsClaseSectores.cs" />
+    <Compile Include="Consultas\_Comun\ComConsComActividadesCree.cs" />
+    <Compile Include="Consultas\_Comun\ComConsEjecucionIngresosV1.cs" />
+    <Compile Include="Consultas\_Comun\ComConsNaturalezaNit.cs" />
+    <Compile Include="Consultas\_Comun\ComConsNit.cs" />
+    <Compile Include="Consultas\_Comun\ComConsNivel.cs" />
+    <Compile Include="Consultas\_Comun\ComConsPptoGastosV3.cs" />
+    <Compile Include="Consultas\_Comun\ComConsRecursos.cs" />
+    <Compile Include="Consultas\_Comun\ComConsRegimenTerceros.cs" />
+    <Compile Include="Consultas\_Comun\ComConsRegionales.cs" />
+    <Compile Include="Consultas\_Comun\ComConsLogin.cs" />
+    <Compile Include="Consultas\_Comun\ComConsUnidades.cs" />
+    <Compile Include="Consultas\_Comun\ComConsUsuariosPrivs.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlCategoriasFacturasV1.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlCategoriaTipoIngresos.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlCategoriaVentaElementos.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlCentroCostos.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlCentroUsos.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlClaseElementosServicios.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlConsultaFacturaV3.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlControlPago.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlCtrlTipoFactura.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlDetalleParamefac.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlElementosReferencias.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlFacConsultaWeb.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlFormaPagoV1.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlQCategoriaTipoIngresos.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlQProductos.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlQTipoFactura.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlReferenciasservicio.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlCtrlRegimen.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlTotalesFacturaV2.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlCentroUsosV1.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlLocalizacion.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlDefIngFactura.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlDesrecfactura.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlDetalledesrecfactura.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlDfactura.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlDistIngFactura.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlFactTasaRetributiva.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlVwDetFacTasasV1.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlConsultasFacturasV1.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlMFactura.cs" />
+    <Compile Include="Controlador\FAC\FACCtrlVwFacTasaImprV1.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlAcciones.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCategoriaventaElementos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseBancos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseConceptos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseCuentas.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseDctos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseElementosservicios.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseMonedas.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseUnidades.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlComActividadesCreeNit.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlComNitIngresos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlComTasasCambio.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlConsNit.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlConsultaPrevioV2.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlContClaseFlujoEfectivo.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlControlCierres.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtasBancarias.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlApp.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlCartera.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlEntidad.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlImpresion.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlIntegracion.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlModulo.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlNotificacionMail.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlPresupuesto.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlRegimen.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlRenta.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCtrlTesoreria.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlDepartamentos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlDNomina.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlEntidades.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlFirmas.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlFormatosGirosElectronicos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlHAuditoria.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlHTesoreria.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlMCompromiso.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlMeses.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlMunicipios.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlNotasTraslados.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlPaises.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlPptoGastos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlPptoIngresos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlTipoNit.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlTransacciones.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlActividadCree.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlAprClaseRecursos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCategoriaTerceros.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCentroCostos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlCuentas.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseDesRecV1.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseGastos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseIngreso.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlClaseSectores.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlEjecucioIngresoV1.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlLogin.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlNaturalezaNit.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlNit.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlNivel.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlRecursos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlRegimenTerceros.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlRegionales.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlUnidades.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlUsosGastos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlUsosIngresos.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlUsuariosPCT.cs" />
+    <Compile Include="Controlador\_Comun\COMCtrlUsuariosPrivs.cs" />
+    <Compile Include="Entidades\FAC\FACCategoriasFacturasV1.cs" />
+    <Compile Include="Entidades\FAC\FACCategoriaTipoIngresos.cs" />
+    <Compile Include="Entidades\FAC\FACCategoriaVentaElementos.cs" />
+    <Compile Include="Entidades\FAC\FACCentroCostos.cs" />
+    <Compile Include="Entidades\FAC\FACCentroUsos.cs" />
+    <Compile Include="Entidades\FAC\FACCentroUsosV1.cs" />
+    <Compile Include="Entidades\FAC\FACClaseElementosServicios.cs" />
+    <Compile Include="Entidades\FAC\FACControlPago.cs" />
+    <Compile Include="Entidades\FAC\FACConsultaFacturaV3.cs" />
+    <Compile Include="Entidades\FAC\FACConsultasFacturasV1.cs" />
+    <Compile Include="Entidades\FAC\FACCtrlRegimen.cs" />
+    <Compile Include="Entidades\FAC\FACCtrlTipoFactura.cs" />
+    <Compile Include="Entidades\FAC\FACDefIngFactura.cs" />
+    <Compile Include="Entidades\FAC\FACDesrecfactura.cs" />
+    <Compile Include="Entidades\FAC\FACDetalledesrecfactura.cs" />
+    <Compile Include="Entidades\FAC\FACDetalleParamefac.cs" />
+    <Compile Include="Entidades\FAC\FACDfactura.cs" />
+    <Compile Include="Entidades\FAC\FACDistIngFactura.cs" />
+    <Compile Include="Entidades\FAC\FACElementosReferencias.cs" />
+    <Compile Include="Entidades\FAC\FACFacConsultaWeb.cs" />
+    <Compile Include="Entidades\FAC\FACFactTasaRetributiva.cs" />
+    <Compile Include="Entidades\FAC\FACFormaPagoV1.cs" />
+    <Compile Include="Entidades\FAC\FACLocalizacion.cs" />
+    <Compile Include="Entidades\FAC\FACMFactura.cs" />
+    <Compile Include="Entidades\FAC\FACReferenciasservicio.cs" />
+    <Compile Include="Entidades\FAC\FACTotalesFacturaV2.cs" />
+    <Compile Include="Entidades\FAC\FACVwDetFacTasasV1.cs" />
+    <Compile Include="Entidades\_Comun\AprHpptoGastosV12.cs" />
+    <Compile Include="Entidades\_Comun\ComAcciones.cs" />
+    <Compile Include="Entidades\_Comun\COMCategoriaventaElementos.cs" />
+    <Compile Include="Entidades\_Comun\ComClaseBancos.cs" />
+    <Compile Include="Entidades\_Comun\COMClaseConceptos.cs" />
+    <Compile Include="Entidades\_Comun\COMClaseDctos.cs" />
+    <Compile Include="Entidades\_Comun\COMClaseElementosservicios.cs" />
+    <Compile Include="Entidades\_Comun\ComClaseFlujoEfectivo.cs" />
+    <Compile Include="Entidades\_Comun\COMClaseUnidades.cs" />
+    <Compile Include="Entidades\_Comun\COMComClasificacionCPC.cs" />
+    <Compile Include="Entidades\_Comun\COMComFuentesCUIPO.cs" />
+    <Compile Include="Entidades\_Comun\COMComPoliticaCUIPO.cs" />
+    <Compile Include="Entidades\_Comun\COMComProgramaticoMGA.cs" />
+    <Compile Include="Entidades\_Comun\COMComRangosValUVT.cs" />
+    <Compile Include="Entidades\_Comun\COMComSeccionesCUIPO.cs" />
+    <Compile Include="Entidades\_Comun\COMComSubProgramaMGA.cs" />
+    <Compile Include="Entidades\_Comun\COMComTasasCambio.cs" />
+    <Compile Include="Entidades\_Comun\COMComValoresUVT.cs" />
+    <Compile Include="Entidades\_Comun\COMClaseMonedas.cs" />
+    <Compile Include="Entidades\_Comun\ComComActividadesCreeNit.cs" />
+    <Compile Include="Entidades\_Comun\ComComNitIngresos.cs" />
+    <Compile Include="Entidades\_Comun\COMConsultaPrevioV2.cs" />
+    <Compile Include="Entidades\_Comun\ComControlCierres.cs" />
+    <Compile Include="Entidades\_Comun\COMCtasBancarias.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlApp.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlCartera.cs" />
+    <Compile Include="Entidades\_Comun\ComCtrlEntidad.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlImpresion.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlModulo.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlNotificacionMail.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlPresupuesto.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlRegimen.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlRenta.cs" />
+    <Compile Include="Entidades\_Comun\COMCtrlTesoreria.cs" />
+    <Compile Include="Entidades\_Comun\ComDepartamentos.cs" />
+    <Compile Include="Entidades\_Comun\ComDNomina.cs" />
+    <Compile Include="Entidades\_Comun\ComEntidades.cs" />
+    <Compile Include="Entidades\_Comun\COMFirmas.cs" />
+    <Compile Include="Entidades\_Comun\ComHAuditoria.cs" />
+    <Compile Include="Entidades\_Comun\COMHpptoGastos.cs" />
+    <Compile Include="Entidades\_Comun\COMHpptoIngresos.cs" />
+    <Compile Include="Entidades\_Comun\COMHTesoreria.cs" />
+    <Compile Include="Entidades\_Comun\COMHtesoreriaV1.cs" />
+    <Compile Include="Entidades\_Comun\COMMCompromiso.cs" />
+    <Compile Include="Entidades\_Comun\ComMeses.cs" />
+    <Compile Include="Entidades\_Comun\COMMmvtoAlmacenV2.cs" />
+    <Compile Include="Entidades\_Comun\ComMunicipios.cs" />
+    <Compile Include="Entidades\_Comun\COMMypPrevioBancoPry.cs" />
+    <Compile Include="Entidades\_Comun\COMNivel.cs" />
+    <Compile Include="Entidades\_Comun\COMNotasTraslados.cs" />
+    <Compile Include="Entidades\_Comun\ComPaises.cs" />
+    <Compile Include="Entidades\_Comun\COMPptoGastos.cs" />
+    <Compile Include="Entidades\_Comun\COMPptoIngresos.cs" />
+    <Compile Include="Entidades\_Comun\ComSolicitudAsignaCdpV1.cs" />
+    <Compile Include="Entidades\_Comun\ComTipoNit.cs" />
+    <Compile Include="Entidades\_Comun\ComTransacciones.cs" />
+    <Compile Include="Entidades\_Comun\ComActividadesCree.cs" />
+    <Compile Include="Entidades\_Comun\ComAprClaseRecursos.cs" />
+    <Compile Include="Entidades\_Comun\ComCambiosArbol.cs" />
+    <Compile Include="Entidades\_Comun\ComCambiosEntidades.cs" />
+    <Compile Include="Entidades\_Comun\ComCategoriaTerceros.cs" />
+    <Compile Include="Entidades\_Comun\ComCentroCostos.cs" />
+    <Compile Include="Entidades\_Comun\ComClaseDesRecV1.cs" />
+    <Compile Include="Entidades\_Comun\ComCuentas.cs" />
+    <Compile Include="Entidades\_Comun\ComClaseGastos.cs" />
+    <Compile Include="Entidades\_Comun\ComClaseIngreso.cs" />
+    <Compile Include="Entidades\_Comun\ComClaseSectores.cs" />
+    <Compile Include="Entidades\_Comun\ComEjecucionIngresosV1.cs" />
+    <Compile Include="Entidades\_Comun\ComLogin.cs" />
+    <Compile Include="Entidades\_Comun\ComNaturalezaNit.cs" />
+    <Compile Include="Entidades\_Comun\ComNit.cs" />
+    <Compile Include="Entidades\_Comun\ComPptoGastosV3.cs" />
+    <Compile Include="Entidades\_Comun\ComRecursos.cs" />
+    <Compile Include="Entidades\_Comun\ComRegimenTerceros.cs" />
+    <Compile Include="Entidades\_Comun\ComRegionales.cs" />
+    <Compile Include="Entidades\_Comun\ComUnidades.cs" />
+    <Compile Include="Entidades\_Comun\ComUsosGastos.cs" />
+    <Compile Include="Entidades\_Comun\COMUsosIngresos.cs" />
+    <Compile Include="Entidades\_Comun\ComUsuariosPCT.cs" />
+    <Compile Include="Entidades\_Comun\ComUsuariosPrivs.cs" />
+    <Compile Include="Entidades\_Comun\PdiHpptoIngresosV2.cs" />
+    <Compile Include="IME\COM\ComIMEAutorizacionUsuario.cs" />
+    <Compile Include="IME\COM\COMIMECtrlImpresion.cs" />
+    <Compile Include="IME\COM\ComIMENit.cs" />
+    <Compile Include="IME\COM\COMIMERecursos.cs" />
+    <Compile Include="IME\FAC\FACIMEElementosReferencias.cs" />
+    <Compile Include="IME\FAC\FACIMEFacturas.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\FAC\FACQCategoriaTipoIngresos.cs" />
+    <Compile Include="Queries\FAC\FACQProductos.cs" />
+    <Compile Include="Queries\FAC\FACQTipoFactura.cs" />
+    <Compile Include="Queries\_Comun\ComQNit.cs" />
+    <Compile Include="Utilidades\Autenticacion.cs" />
+    <Compile Include="Utilidades\EncriptarClave.cs" />
+    <Compile Include="Utilidades\RespuestaNet.cs" />
+    <Compile Include="Utilidades\Utilidades.cs" />
+    <Compile Include="Utilidades\UtilidadesExcel.cs" />
+    <Compile Include="Utilidades\UtilidadesReporte.cs" />
+    <Compile Include="_ConexionesBD\ConexionBD.cs" />
+    <Compile Include="_ConexionesBD\ConexionBDMySQL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

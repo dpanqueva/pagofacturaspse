@@ -1,0 +1,987 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\usuario\Documents\Proyectos\pagofacturas\PCTWebFactura\Publicacion</_PublishTargetUrl>
+    <History>True|2022-10-19T00:22:26.2206010Z;True|2022-10-04T14:55:08.7349754-05:00;True|2022-09-30T04:53:03.6220058-05:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Images/anterior.png">
+      <publishTime>11/17/2022 18:47:33</publishTime>
+    </File>
+    <File Include="App_Images/bg copy.png">
+      <publishTime>11/17/2022 18:47:33</publishTime>
+    </File>
+    <File Include="App_Images/bg.png">
+      <publishTime>11/17/2022 18:47:33</publishTime>
+    </File>
+    <File Include="App_Images/btnpse.png">
+      <publishTime>11/17/2022 18:47:33</publishTime>
+    </File>
+    <File Include="App_Images/bullet.png">
+      <publishTime>11/17/2022 18:47:33</publishTime>
+    </File>
+    <File Include="App_Images/button.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/cerrar_1.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/lista.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/logoEntidad.jpg">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/logopct.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/logopct1.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/PCTAnimacion.gif">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/placetopay-logo.svg">
+      <publishTime>11/19/2022 12:55:14</publishTime>
+    </File>
+    <File Include="App_Images/primero.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/siguiente.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/ultimo.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/wrap-bg-down.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/wrap-bg-left.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/wrap-bg-right.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="App_Images/wrap-bg-Top.png">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>11/17/2022 18:46:59</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>11/17/2022 18:46:59</publishTime>
+    </File>
+    <File Include="bin/ClosedXML.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ClosedXML.Extensions.Mvc.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ClosedXML.pdb">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ConsumoZpagos.dll">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Design.dll">
+      <publishTime>04/18/2016 05:13:36</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.CrystalReports.Engine.dll">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Data.AdoDotNetInterop.dll">
+      <publishTime>04/18/2016 05:13:36</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.ClientDoc.dll">
+      <publishTime>05/16/2022 19:57:42</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.CommonControls.dll">
+      <publishTime>05/16/2022 19:57:42</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.Controllers.dll">
+      <publishTime>05/16/2022 19:57:42</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportAppServer.DataSetConversion.dll">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.ReportSource.dll">
+      <publishTime>11/17/2022 18:47:34</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Shared.dll">
+      <publishTime>11/17/2022 18:47:35</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.VSDesigner.dll">
+      <publishTime>04/18/2016 05:13:36</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Web.dll">
+      <publishTime>11/17/2022 18:47:35</publishTime>
+    </File>
+    <File Include="bin/CrystalDecisions.Windows.Forms.dll">
+      <publishTime>04/18/2016 05:13:36</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>11/17/2022 18:47:01</publishTime>
+    </File>
+    <File Include="bin/EnvDTE.dll">
+      <publishTime>04/19/2022 12:53:14</publishTime>
+    </File>
+    <File Include="bin/EnvDTE80.dll">
+      <publishTime>04/19/2022 12:53:14</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Helpers.resources.dll">
+      <publishTime>11/17/2022 18:47:11</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Mvc.resources.dll">
+      <publishTime>11/17/2022 18:47:09</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Optimization.resources.dll">
+      <publishTime>11/17/2022 18:47:10</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Razor.resources.dll">
+      <publishTime>11/17/2022 18:47:10</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>11/17/2022 18:47:11</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>11/17/2022 18:47:11</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.resources.dll">
+      <publishTime>11/17/2022 18:47:11</publishTime>
+    </File>
+    <File Include="bin/ExcelNumberFormat.dll">
+      <publishTime>11/17/2022 18:47:02</publishTime>
+    </File>
+    <File Include="bin/FastMember.dll">
+      <publishTime>11/17/2022 18:47:02</publishTime>
+    </File>
+    <File Include="bin/FlashControlV71.dll">
+      <publishTime>04/18/2016 05:13:36</publishTime>
+    </File>
+    <File Include="bin/Grpc.Core.Api.dll">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="bin/Grpc.Core.Api.pdb">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="bin/Grpc.Core.dll">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="bin/Grpc.Core.pdb">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="bin/grpc_csharp_ext.x64.dll">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="bin/grpc_csharp_ext.x86.dll">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="bin/libgrpc_csharp_ext.x64.dylib">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="bin/libgrpc_csharp_ext.x64.so">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>11/17/2022 18:47:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.Abstractions.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Configuration.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Primitives.dll">
+      <publishTime>11/17/2022 18:47:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Designer.Interfaces.dll">
+      <publishTime>04/19/2022 13:01:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.OLE.Interop.dll">
+      <publishTime>04/19/2022 12:53:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.Shell.Interop.dll">
+      <publishTime>04/19/2022 12:53:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.VisualStudio.TextManager.Interop.dll">
+      <publishTime>04/19/2022 12:53:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>11/17/2022 18:47:14</publishTime>
+    </File>
+    <File Include="bin/MySql.Data.dll">
+      <publishTime>11/17/2022 18:47:22</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/17/2022 18:47:14</publishTime>
+    </File>
+    <File Include="bin/Oracle.DataAccess.dll">
+      <publishTime>05/24/2017 12:35:20</publishTime>
+    </File>
+    <File Include="bin/Oracle.ManagedDataAccess.dll">
+      <publishTime>11/17/2022 18:47:15</publishTime>
+    </File>
+    <File Include="bin/PCTWebComun.dll">
+      <publishTime>11/19/2022 20:19:05</publishTime>
+    </File>
+    <File Include="bin/PCTWebComunNet.dll">
+      <publishTime>11/21/2022 19:16:03</publishTime>
+    </File>
+    <File Include="bin/PCTWebComunNet.dll.config">
+      <publishTime>11/17/2022 18:47:27</publishTime>
+    </File>
+    <File Include="bin/PCTWebComunNet.pdb">
+      <publishTime>11/21/2022 19:16:03</publishTime>
+    </File>
+    <File Include="bin/PCTWebFactura.dll">
+      <publishTime>11/21/2022 19:35:17</publishTime>
+    </File>
+    <File Include="bin/PCTWebFactura.pdb">
+      <publishTime>11/21/2022 19:35:17</publishTime>
+    </File>
+    <File Include="bin/PlaceToPayConsume.dll">
+      <publishTime>11/21/2022 18:48:29</publishTime>
+    </File>
+    <File Include="bin/PlaceToPayConsume.dll.config">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="bin/PlaceToPayConsume.pdb">
+      <publishTime>11/21/2022 18:48:29</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>07/08/2018 22:38:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>07/08/2018 22:38:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>11/17/2022 18:47:12</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Win32.Primitives.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Console.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.FileVersionInfo.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Globalization.Calendars.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.Compression.ZipFile.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Net.Http.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Net.Sockets.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Runtime.InteropServices.RuntimeInformation.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Encoding.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.Primitives.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Tasks.Extensions.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.ValueTuple.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.ReaderWriter.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XmlDocument.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Xml.XPath.XDocument.dll">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>07/08/2018 22:38:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>07/08/2018 22:38:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>11/17/2022 18:47:13</publishTime>
+    </File>
+    <File Include="bin/SAPBusinessObjects.WPF.Viewer.dll">
+      <publishTime>04/18/2016 05:13:36</publishTime>
+    </File>
+    <File Include="bin/SAPBusinessObjects.WPF.ViewerShared.dll">
+      <publishTime>04/18/2016 05:13:36</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>04/19/2022 12:53:16</publishTime>
+    </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>11/17/2022 18:47:15</publishTime>
+    </File>
+    <File Include="bin/System.Memory.dll">
+      <publishTime>11/17/2022 18:47:16</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/17/2022 18:47:10</publishTime>
+    </File>
+    <File Include="bin/System.Numerics.Vectors.dll">
+      <publishTime>11/17/2022 18:47:17</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>11/17/2022 18:47:17</publishTime>
+    </File>
+    <File Include="bin/System.Text.Encodings.Web.dll">
+      <publishTime>11/17/2022 18:47:17</publishTime>
+    </File>
+    <File Include="bin/System.Text.Json.dll">
+      <publishTime>11/17/2022 18:47:18</publishTime>
+    </File>
+    <File Include="bin/System.Threading.Tasks.Extensions.dll">
+      <publishTime>11/17/2022 18:47:19</publishTime>
+    </File>
+    <File Include="bin/System.ValueTuple.dll">
+      <publishTime>11/17/2022 18:47:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/17/2022 18:47:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/17/2022 18:47:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/17/2022 18:47:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/17/2022 18:47:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>11/17/2022 18:47:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/17/2022 18:47:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/17/2022 18:47:11</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/17/2022 18:47:11</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/17/2022 18:47:11</publishTime>
+    </File>
+    <File Include="bin/VSLangProj.dll">
+      <publishTime>04/19/2022 12:53:16</publishTime>
+    </File>
+    <File Include="bin/VsWebSite.Interop.dll">
+      <publishTime>04/19/2022 12:56:02</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>11/17/2022 18:47:20</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/style.css">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Content/Tabulator/tabulator_bootstrap4.css">
+      <publishTime>11/17/2022 18:47:44</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>11/17/2022 18:47:33</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>11/17/2022 18:47:39</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/17/2022 18:47:33</publishTime>
+    </File>
+    <File Include="grpc_csharp_ext.x64.dll">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="grpc_csharp_ext.x86.dll">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="libgrpc_csharp_ext.x64.dylib">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="libgrpc_csharp_ext.x64.so">
+      <publishTime>11/17/2022 18:47:08</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>11/17/2022 18:47:55</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>11/17/2022 18:47:55</publishTime>
+    </File>
+    <File Include="Scripts/Comun.js">
+      <publishTime>11/21/2022 19:13:28</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.min.map">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.4.1.slim.min.map">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery.redirect.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/jquery_wrapper.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/jquery_wrapper.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/accessor.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/accessor.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/ajax.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/ajax.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/calculation_colums.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/calculation_colums.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/clipboard.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/clipboard.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/data_tree.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/data_tree.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/download.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/download.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/edit.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/edit.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/filter.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/filter.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/format.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/format.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/frozen_columns.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/frozen_columns.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/frozen_rows.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/frozen_rows.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/group_rows.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/group_rows.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/history.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/history.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/html_table_import.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/html_table_import.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/keybindings.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/keybindings.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/moveable_columns.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/moveable_columns.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/moveable_rows.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/moveable_rows.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/mutator.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/mutator.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/page.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/page.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/persistence.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/persistence.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/reactive_data.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/reactive_data.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/resize_columns.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/resize_columns.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/resize_rows.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/resize_rows.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/resize_table.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/resize_table.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/responsive_layout.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/responsive_layout.min.js">
+      <publishTime>11/17/2022 18:47:57</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/select_row.js">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/select_row.min.js">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/sort.js">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/sort.min.js">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/validate.js">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/modules/validate.min.js">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/tabulator.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/tabulator.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/tabulator_core.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Scripts/Tabulator/tabulator_core.min.js">
+      <publishTime>11/17/2022 18:47:56</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>11/21/2022 19:14:18</publishTime>
+    </File>
+    <File Include="Views/PagoFacturas/Index.cshtml">
+      <publishTime>11/21/2022 19:15:40</publishTime>
+    </File>
+    <File Include="Views/PagoFacturas/ProcessPagoFacturas.js">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/PagoFacturas/Respuesta.cshtml">
+      <publishTime>08/17/2022 12:10:18</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Automatica.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura PCT.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Produccion.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Producción y Servicio.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas Corpoguavio1.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas CRA.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F1.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F10.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F11.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F12.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F13.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F14.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F1_actual.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F1_carder.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F2.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F3.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F4.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F5.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F6 - cornare.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F6.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F7.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F8.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas F9.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas_Carder.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas_Con_Codigo_Barras.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas_Corpocaldas.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas_Corpocaldas_ult.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura Tasas_Corponor.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura.rpt">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura1.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura1_dañado.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura2 V1.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura2.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura3.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura4.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Prodcorponor.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos 1.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F1.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F10.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F1_INS.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F2.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F3 CB.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F3.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F4 - CALDAS.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F4.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F5.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F6.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F7.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F8.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos F9.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_ProductosCardique.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productoscorponor.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_ProductosCRA.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos_CORPONOR.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos_CRA.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos_INS_old.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Reportes/Factura_Productos_INV_F1.rpt">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/17/2022 18:47:59</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>11/17/2022 18:47:58</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/21/2022 19:16:04</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

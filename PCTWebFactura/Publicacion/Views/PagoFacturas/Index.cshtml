@@ -1,0 +1,246 @@
+﻿
+@{ ViewBag.Title = "Pago Facturas"; }
+<link href="~/Content/Tabulator/tabulator_bootstrap4.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+@section Scripts{
+    <script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/bundles/Comun")"></script>
+    <script src="~/Scripts/jquery.redirect.js"></script>
+}
+<body id="general">
+
+    <div class="principal">
+        <div class="contenidosBasicos">
+            <header>
+                <div class="logopct"></div>
+                <div>
+                    <h2>
+                        <span class="tituloHeader">
+                            PCT Enterprise
+                        </span>
+                    </h2>
+                    <h2></h2>
+                </div>
+                <div class="clear"></div>
+            </header>
+
+            <div class="page">
+                <div class="container">
+                    @using (Html.BeginForm("RedirectLogin", "PagoFacturas", FormMethod.Post))
+                    {
+
+        <table class="containerMensaje">
+            <tr>
+                <th>
+                    Listado Facturas Pendientes Por Pagar
+                    <button type="submit" class="cerrarSesion" style="height: 25px; width: 23px;float: right; cursor:pointer" />
+                </th>
+
+
+            </tr>
+            <tr>
+                <td class="textlabels">
+                    <label>
+                        Listado de facturas pendientes a nombre de:
+                    </label>
+                    <label style="font-weight:bold">
+                        @ViewData["entidad"]
+                    </label>
+                    <br>
+                    <label>Por favor seleccione la factura que desea pagar:</label>
+                    @*<div style="text-align: end; margin-top: -6%;">
+                        <button type="button" class="btn btn-primary" onclick="GenerarFactura()">Ver Factura </button>
+                    </div>*@
+                </td>
+            </tr>
+        </table>}
+
+                </div>
+                <div class="container">
+
+                    <div id="tFormaPagoIngresosFacturas" class="table table-hover fondo-noeditable">
+
+                    </div>
+                    <div>
+                        <table class="containerDatosGenerales">
+                            <tr>
+                                <td>
+                                    <p class="titulo">
+                                        Datos generales
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table class="datosGenerales">
+                                        <tr>
+                                            <td>
+                                                <span>Vigencia:</span>
+                                                <span id="txtVigencia"></span>
+                                            </td>
+                                            <td>
+                                                <span>Estado:</span>
+                                                <span id="txtEstado"></span>
+                                            </td>
+                                            <td>
+                                                <span>Impreso:</span>
+                                                <span id="txtImpreso"></span>
+                                            </td>
+                                        <tr>
+                                            <td>
+                                                <span>N° Factura:</span>
+                                                <span id="txtNFactura"></span>
+                                            </td>
+                                            <td>
+                                                <span>Tipo Factura:</span>
+                                                <span id="txtTipoFactura"></span>
+                                            </td>
+                                            <td>
+                                                <span>Fecha Vencimiento:</span>
+                                                <span id="txtFeVencimiento"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Desde:</span>
+                                                <span id="txtDesde"></span>
+                                            </td>
+                                            <td>
+                                                <span>N° Cot:</span>
+                                                <span id="txtNCot"></span>
+                                            </td>
+                                            <td>
+                                                <span>Fecha Registro:</span>
+                                                <span id="txtFeRegistro"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span>Hasta:</span>
+                                                <span id="txtHasta"></span>
+                                            </td>
+                                            <td>
+                                                <span>Cod. Vendedor:</span>
+                                                <span id="txtCodVendedor"></span>
+                                            </td>
+                                            <td>
+                                                <span>Cod. Tasa:</span>
+                                                <span id="txtCodTasa"></span>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="containerTextBox">
+                                        <div class="tituloObserv">
+                                            <p>Observacion</p>
+                                        </div>
+                                        <div class="commentsBox">
+                                            <textarea name="observaciones" id="txtObservaciones" cols="30" rows="10" disabled></textarea>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm hiddenDiv">
+                        <form action="https://checkout.wompi.co/p/" method="GET" id="formWompi">
+                            <!-- OBLIGATORIOS -->
+                            <input style="display:none;" name="public-key" value="pub_test_RG488sT68YoWBHOhISVJ2hrQnYbp3tQq" />
+                            <input style="display:none;" name="currency" value="COP" />
+                            <input style="display:none;" name="amount-in-cents" id="txtValorTotal" />
+                            <input style="display:none;" name="reference" id="txtReferencia" />
+                            <!-- OPCIONALES -->
+                            <!-- <input style="display:none;" type="hidden" name="signature:integrity" value="test_integrity_0BVJA4YDN9FO4Idzve779HOFqHWB3xAz" />-->
+                            <input style="display:none;" type="hidden" name="redirect-url" value="http://claro.pctltda.com/PCTWEBFacturaDotNet/PagoFacturas" />
+                            <!--<input style="display:none;" type="hidden" name="redirect-url" value="https://localhost:44352/PagoFacturas" />-->
+                            <input style="display:none;" name="customer-data:email" placeholder="CORREO_DEL_PAGADOR" id="txtEmailPagador" />
+                            <input style="display:none;" name="customer-data:full-name" placeholder="NOMBRE_DEL_PAGADOR" id="txtNombrePagador" />
+                            <input style="display:none;" name="customer-data:phone-number" placeholder="NUMERO_DE_TELEFONO_DEL_PAGADOR" id="txtTelefonoPagador" />
+                            <input style="display:none;" name="customer-data:legal-id" placeholder="DOCUMENTO_DE_IDENTIDAD_DEL_PAGADOR" id="txtTipoDocPagador" />
+                            <input style="display:none;" type="hidden" name="customer-data:legal-id-type" />
+                            <button type="submit" id="" style="border: none; background: white; display:none" disabled><img style="width:100%;" src="~/App_Images/btnpse.png" /> W</button>
+
+                        </form>
+                    </div>
+                    <div class="col-sm hiddenDiv" id="divWompi">
+                        <button id="botonWompi" style="border: none; background: white;" onclick="dataModal('Wompi');" disabled><img style="width:100%;" src="~/App_Images/btnpse.png" />W</button>
+                    </div>
+                    <div class="col-sm hiddenDiv" id="divZpagos">
+                        <button id="botonZpagos" style="border: none; background: white;" onclick="dataModal('Zpagos');" disabled><img style="width:100%;" src="~/App_Images/btnpse.png" />Z</button>
+                    </div>
+                    <div class="col-sm hiddenDiv" id="divPlacetoPay">
+                        <button id="botonPlace" style="border: none; background: white;" onclick="dataModal('PlaceToPay');" disabled> <img style="width:100%;" src="~/App_Images/btnpse.png" />P</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <button type="button" id="btnModal" style="display:none !important" class="btn btn-primary" data-toggle="modal" data-target="#ModalCorreoTelefono" data-whatever="">Open modal for</button>
+
+    <div class="modal fade" id="ModalCorreoTelefono" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Datos Complementarios</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Teléfono:</label>
+                            <input type="number" placeholder="3219999999" class="form-control" id="telefonoUser">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Email:</label>
+                            <input type="email" placeholder="example@email.com" class="form-control" id="emailUser">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnPagarModal" class="btn btn-primary">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="ModalOpcionesPago" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Opciones de pago disponibles</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnPagarModal" class="btn btn-primary">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
