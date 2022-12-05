@@ -12,6 +12,7 @@ using PCTWebComun.Utilidades;
 using PCTWebFactura.Configuration;
 using PCTWebFactura.Models;
 using PlaceToPayConsume.Controllers;
+using OneCeroOneConsume.Controllers;
 using PlaceToPayConsume.Models;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace PCTWebFactura.Classes
         private IngCtrlConsultaMingresos conMing = new IngCtrlConsultaMingresos();
         LoginProvider LoginProvider = new LoginProvider();
         private DbCommand oSalida;
-        public Respuesta ValidationZpagos(DetalleFactura facSelected)
+        public async Task<Respuesta> ValidationFacturaAsync(DetalleFactura facSelected)
         {
             using (var client = new System.Net.Http.HttpClient())
             {
@@ -339,6 +340,12 @@ namespace PCTWebFactura.Classes
                             }
                         }
                     }
+                    /*var message = ValidarParametrizacion("").Result;
+                    if (message != "OK")
+                    {
+                        res.Mensaje = message;
+                        res.Codigo = 0;
+                    }*/
                     /**/
                     //res.Codigo = 1;
                     return res;
@@ -361,6 +368,130 @@ namespace PCTWebFactura.Classes
             {
                 var context = System.Web.HttpContext.Current;
                 ModelToSend model = new ModelToSend();
+                ConsumoPlaceToPayController cptp = new ConsumoPlaceToPayController();
+                var Nombre = "";
+                var Apellido = "";
+                var tipod = "";
+                var Nit = "";
+                if (!string.IsNullOrEmpty((string)(context.Session["NIT"])))
+                {
+                    Nit = (string)(context.Session["NIT"]);
+                }
+                switch ((string)(context.Session["TIPOD"]))
+                {
+                    case "C":
+                        tipod = "CC";
+                        if (!string.IsNullOrEmpty((string)(context.Session["NOMBRE_CLIENTE"])))
+                        {
+                            Nombre = (string)(context.Session["NOMBRE_CLIENTE"]);
+                        }
+                        else
+                        {
+                            Nombre = "NN. CC:" + Nit;
+                        }
+                        if (!string.IsNullOrEmpty((string)(context.Session["APELLIDO_CLIENTE"])))
+                        {
+                            Apellido = (string)(context.Session["APELLIDO_CLIENTE"]);
+                        }
+                        else
+                        {
+                            Apellido = "";
+                        }
+                        break;
+                    case "E":
+                        tipod = "CC";
+                        if (!string.IsNullOrEmpty((string)(context.Session["NOMBRE_CLIENTE"])))
+                        {
+                            Nombre = (string)(context.Session["NOMBRE_CLIENTE"]);
+                        }
+                        else
+                        {
+                            Nombre = "NN. CC:" + Nit;
+                        }
+                        if (!string.IsNullOrEmpty((string)(context.Session["APELLIDO_CLIENTE"])))
+                        {
+                            Apellido = (string)(context.Session["APELLIDO_CLIENTE"]);
+                        }
+                        else
+                        {
+                            Apellido = "";
+                        }
+                        break;
+                    case "N":
+                        tipod = "NIT";
+                        if (!string.IsNullOrEmpty((string)(context.Session["NOMBRE_CLIENTE"])))
+                        {
+                            Nombre = (string)(context.Session["NOMBRE_CLIENTE"]);
+                        }
+                        else
+                        {
+                            Nombre = "NIT-" + Nit;
+                        }
+                        if (!string.IsNullOrEmpty((string)(context.Session["APELLIDO_CLIENTE"])))
+                        {
+                            Apellido = (string)(context.Session["APELLIDO_CLIENTE"]);
+                        }
+                        else
+                        {
+                            Apellido = "";
+                        }
+                        break;
+                    default:
+                        tipod = "0";
+                        Nombre = (string)(context.Session["NOMBRE_CLIENTE"]);
+                        Apellido = "NIT-";
+                        break;
+                }
+                model.buyer = new buyer();
+                model.buyer.name = Nombre;
+                model.buyer.surname = Apellido;
+                model.buyer.email = obj.email;
+                model.buyer.document = Nit;
+                model.buyer.documentType = tipod;
+                model.buyer.mobile = long.Parse(obj.telefono);
+                model.payment = new payment();
+                model.payment.reference = obj.itemSelected.COD_FACTURA + " - " + obj.itemSelected.VIGENCIA;
+                model.payment.description = "Pago de Factura N " + obj.itemSelected.COD_FACTURA + " - " + obj.itemSelected.VIGENCIA;
+                model.payment.amount = new amount();
+                model.payment.amount.currency = "COP";
+                model.payment.amount.total = double.Parse(obj.itemSelected.TOTAL_PAGO);
+                model.ipAddress = "192.168.0.24";
+                //model.returnUrl = "http://claro.pctltda.com/PCTWEBFacturaDotNet/PagoFacturas";
+                model.returnUrl = "https://localhost:44352/PagoFacturas";
+                model.userAgent = "Chrome";
+                model.paymentMethod = null;
+
+                Response response = cptp.CrearSesionPlaceToPayAsync(model).Result;
+                respuesta.Codigo = response.status.status == "OK" ? 1 : 0;
+                if (respuesta.Codigo == 1)
+                {
+                    RegistrarBitacora(obj, false, response.requestId);
+                }
+                else
+                {
+                    RegistrarBitacora(obj, true, "");
+                }
+                respuesta.Mensaje = response.status.message;
+                respuesta.Object = response;
+                return respuesta;
+            }
+            catch (Exception e)
+            {
+                respuesta.Codigo = 0;
+                respuesta.Mensaje = "Error: " + e.Message;
+                return respuesta;
+            }
+
+        }
+        public Respuesta Consumo1Cero1(ModelPagoBotones obj)
+        {
+            Respuesta respuesta = new Respuesta();
+            try
+            {
+                var context = System.Web.HttpContext.Current;
+                ModelToSend model = new ModelToSend();
+                OneCeroOneController ococ = new OneCeroOneController();
+                
                 ConsumoPlaceToPayController cptp = new ConsumoPlaceToPayController();
                 var Nombre = "";
                 var Apellido = "";
@@ -907,6 +1038,8 @@ namespace PCTWebFactura.Classes
                         res.Mensaje = "La factura ya se encuentra CANCELADA.";
                         res.Codigo = 0;
                     }
+                        
+                    
                 }
             }
             else
@@ -956,6 +1089,10 @@ namespace PCTWebFactura.Classes
                         }
                     }
                     else if (i.origen == "PSE ZPAGOS")
+                    {
+                        actualizaestado(i.ticket_id);
+                    }
+                    else if (i.origen == "PSE 1Cero1")
                     {
                         actualizaestado(i.ticket_id);
                     }
@@ -2307,6 +2444,37 @@ namespace PCTWebFactura.Classes
                 System.Web.HttpContext.Current.Session["_ENTIDAD_"] = entidad.entidad;
             }
             return true;
+        }
+        public async Task<string> ValidarParametrizacion(string sentence)
+        {
+            using (var conn = await ConectionFactory.DefaultConnectionAsync())
+            {
+                try
+                {
+                    DbCommand command = conn.CreateCommand();
+                    command.CommandText = sentence;
+                    command.Connection = conn;
+                    command.CommandType = CommandType.Text;
+                    if (this.transaction != null)
+                    {
+                        command.Transaction = this.transaction;
+                    }
+
+
+                    var reader = await command.ExecuteReaderAsync();
+                    while (await reader.ReadAsync())
+                    {
+                        var mensaje = SqlReaderUtilities.SafeGet<string>(reader, "NOM_SECCION");
+                        return mensaje;
+                    }
+                    return "";
+                }
+                catch (DbException ex)
+                {
+                    throw new Exception("LoginProvider :: ConsultarNombreEntidad", ex);
+                }
+            }
+
         }
 
     }

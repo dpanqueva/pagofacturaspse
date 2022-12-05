@@ -22,7 +22,7 @@ namespace OneCeroOneConsume.Controllers
          * Method for send the request pay to api 1cero1
          * @return new instance with response from api 1cero1
          */
-        public async Task<RSPayOneCeroOne> TransactionAPIPayment() {
+        public async Task<object> TransactionAPIPayment() {
 
             using (var client = new System.Net.Http.HttpClient()) 
             {

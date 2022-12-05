@@ -47,6 +47,10 @@ namespace PCTWebFactura.Controllers
         {
             return RedirectToAction("Index", "Login", new { area = "" });
         }
+
+        /*
+         * Metodo para cargar el listado de facturas y la pasarela asignada a mostrar
+         */
         public ActionResult cargarFacturasAPI(string idPago)
         {
             Respuesta respuesta = new Respuesta();
@@ -55,17 +59,22 @@ namespace PCTWebFactura.Controllers
             respuesta.codPasarela = pfp.ConsultarPasarelaAsignadaAsync().Result;
             return Content(respuesta.GetResponse());
         }
+
+        /*
+         * Metodo para identificar que facturas estan iniciadas o pendientes para actualizar la informacion del pago
+         */
         public ActionResult ActualizarEstadosFacturas()
         {
 
             Respuesta respuesta = new Respuesta();
             PagoFacturasProvider pfp = new PagoFacturasProvider();
-            //respuesta = pfp.CargarFacturas("");
             var res = pfp.ActualizarEstadosGeneralAsync().Result;
-            /* respuesta.ActualizoEstadoFacturas = res2.ActualizoEstadoFacturas;
-             respuesta.FacturaActualizadaMessage = res2.FacturaActualizadaMessage;*/
             return Content(res.GetResponse());
         }
+
+        /*
+         * Metodo que consume Place To Pay para actualizar el estado de las facturas en estado pendiente
+         */
         public ActionResult notificationServicePTP(NotificationPTP obj)
         {
             ResponsePTP res = new ResponsePTP();
@@ -83,16 +92,23 @@ namespace PCTWebFactura.Controllers
                 res.Exception = ex.Message;
                 return Content(res.GetResponse());
             }
-            
+
         }
 
+        /*
+         * Metodo para validar que la parametrizacion de la factura esta lista para permitir el pago
+         */
         public ActionResult PagarValidation(DetalleFactura facSelected)
         {
             Respuesta respuesta = new Respuesta();
             PagoFacturasProvider pfp = new PagoFacturasProvider();
-            respuesta = pfp.ValidationZpagos(facSelected);
+            respuesta = pfp.ValidationFacturaAsync(facSelected).Result;
             return Content(respuesta.GetResponse());
         }
+
+        /*
+         * Metodo para validar que la factura no tenga un intento de pago que este en estado abierto en la bitacora
+         */
         public ActionResult IniciarTransaccion(DetalleFactura facSelected)
         {
             Respuesta respuesta = new Respuesta();
@@ -100,6 +116,10 @@ namespace PCTWebFactura.Controllers
             respuesta = pfp.IniciarTransaccion(facSelected);
             return Content(respuesta.GetResponse());
         }
+
+        /*
+         * Metodo realizar el consumo del dll de zona pagos que devuelve la URL a redireccionar el usuario
+         */
         public ActionResult ConsumoZpagos(ModelPagoBotones obj)
         {
             Respuesta respuesta = new Respuesta();
@@ -107,6 +127,10 @@ namespace PCTWebFactura.Controllers
             respuesta = pfp.ConsumoZpagos(obj);
             return Content(respuesta.GetResponse());
         }
+
+        /*
+         * Metodo para actualizar la bitacora de los pagos hechos desde la pasarela Wompi
+         */
         public ActionResult ConsumoWompi(ModelPagoBotones obj)
         {
             Respuesta respuesta = new Respuesta();
@@ -114,6 +138,10 @@ namespace PCTWebFactura.Controllers
             respuesta = pfp.RegistrarBitacora(obj, false, "");
             return Content(respuesta.GetResponse());
         }
+
+        /*
+         * Metodo para realizar el consumo del dll de Place To Pay que devuelve la URL a redireccionar el usuario
+         */
         public ActionResult ConsumoPlaceToPay(ModelPagoBotones obj)
         {
             Respuesta respuesta = new Respuesta();
@@ -122,6 +150,22 @@ namespace PCTWebFactura.Controllers
             return Content(respuesta.GetResponse());
 
         }
+
+        /*
+         * Metodo para realizar el consumo del dll de 1Cero1 que devuelve la URL a redireccionar el usuario
+         */
+        public ActionResult Consumo1Cero1(ModelPagoBotones obj)
+        {
+            Respuesta respuesta = new Respuesta();
+            PagoFacturasProvider pfp = new PagoFacturasProvider();
+            respuesta = pfp.Consumo1Cero1(obj);
+            return Content(respuesta.GetResponse());
+
+        }
+
+        /*
+         * Metodo para actualizar el estado en la bitacora cuando el usuario retorna al comercio desde Wompi
+         */
         public ActionResult ActualizarEstadoWompi(ResponseWompi obj)
         {
             Respuesta respuesta = new Respuesta();
@@ -131,6 +175,9 @@ namespace PCTWebFactura.Controllers
 
         }
 
+        /*
+         * Metodo para generar report de Cristal Report
+         */
         public ActionResult GenerarRptFactura(string codFactura)
         {
             try
@@ -191,62 +238,6 @@ namespace PCTWebFactura.Controllers
             }
 
         }
-        /*public List<FacConsultasFacturasV1> CargarFacturas()
-        {
-            var context = System.Web.HttpContext.Current;
-            ViewData["Entidad"] = (string)(context.Session["_ENTIDAD_"]);
-            var entidadCtrl = new ComCtrlContabilidad();
-            entidadCtrl.Mes = Convert.ToString(DateTime.Now.Month);
-            var ConsClsCtrlCierres = new ComCtrlCtrlContabilidad();
-            var utGv = new utilidadesGV();
-            var consulta = new FacCtrlConsultasFacturasV1();
-            var dtctrlcierres = ConsClsCtrlCierres.CtrlconsControlCierres(entidadCtrl);
-
-            if (dtctrlcierres.Rows.Count > 0)
-            {
-                if (dtctrlcierres.Rows[0]["CERRADO"].ToString() != "S")
-                {
-                    var entidad = new FacConsultasFacturasV1();
-                    entidad.Nit = (string)(context.Session["NIT"]);
-                    var count = consulta.ctrlContarConsFactura(entidad);
-                    ViewData["_Num_Registros_"] = count;
-                    if (utGv.calculoPaginasConsSqlPag(count))
-                    {
-                        ViewData["_Primera_Pag_"] = utGv.numPrimeraPagina.ToString();
-                        ViewData["_Ultima_Pag_"] = utGv.numUltimaPagina.ToString();
-                        var res = CargarConsFactura(entidad, 1);
-                        if (res.Rows.Count > 0)
-                        {
-                            var consCtrlTesoreria = new ComCtrlCtrlTesoreria();
-                            var dtVisibleBoton = consCtrlTesoreria.CtrlConsCtrlTesoreria();
-                            var bl = dtVisibleBoton.Rows[0]["CTRL_ACTIVA_PSE"].ToString() == "S";
-                            List<FacConsultasFacturasV1> lstFacturas = new List<FacConsultasFacturasV1>();
-                            for (int i = 0; i < res.Rows.Count; i++)
-                            {
-                                FacConsultasFacturasV1 unitFac = new FacConsultasFacturasV1();
-                                unitFac.Vigencia = res.Rows[i]["VIGENCIA"].ToString();
-                                unitFac.CodFactura = res.Rows[i]["COD_FACTURA"].ToString();
-                                unitFac.IdMfactura = res.Rows[i]["ID_MFACTURA"].ToString();
-                                unitFac.Referencia = res.Rows[i]["REFERENCIA"].ToString();
-                                unitFac.FechaFactura = res.Rows[i]["FEC_ACTUAL"].ToString();
-                                unitFac.ValRecargofac = res.Rows[i]["VAL_RECARGOFAC"].ToString();
-                                unitFac.ValDescuentofac = res.Rows[i]["VAL_DESCUENTOFAC"].ToString();
-                                unitFac.ValInterescobrar = res.Rows[i]["VAL_INTERESCOBRAR"].ToString();
-                                unitFac.ValCuentascobrar = res.Rows[i]["VAL_CUENTASCOBRAR"].ToString();
-                                unitFac.ValTotal = res.Rows[i]["TOTAL_PAGO"].ToString();
-                                lstFacturas.Add(unitFac);
-
-                            }
-                            return lstFacturas;
-                        }
-                    }
-                }
-
-            }
-            return null;
-
-        }*/
-
-
+        
     }
 }

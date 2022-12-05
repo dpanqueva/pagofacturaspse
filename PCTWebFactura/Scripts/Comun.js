@@ -150,20 +150,34 @@ $(document).ready(function () {
         } else if (telefono == 0) {
             flag = false;
             mensaje = "Debe digitar un telefono";
+        } else if (!validarEmail(email)) {
+            flag = false;
+            mensaje = "Debe digitar un email válido";
         }
+
         if (flag) {
             itemSelected.BTN_SELECTED = btnSelected;
             fnValidationFactura("/PagoFacturas/PagarValidation", itemSelected);
         } else {
+
             Swal.fire(
                 'Informacion!',
                 mensaje,
                 'warning'
             )
+
         }
 
 
     }, false);
+
+    function validarEmail(valor) {
+        if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     tblFacturas = new Tabulator("#tFormaPagoIngresosFacturas", {
         width: "400",
@@ -313,6 +327,7 @@ $(document).ready(function () {
                 document.getElementById("botonWompi").disabled = false;
                 document.getElementById("botonZpagos").disabled = false;
                 document.getElementById("botonPlace").disabled = false;
+                document.getElementById("boton1Cero1").disabled = false;
                 console.log(datos);
                 itemSelected = datos[0];
                 fnDetallarFactura(datos[0]);
@@ -335,6 +350,34 @@ fnPagoPlaceToPay = function (obj) {
         async: false,
         type: 'POST',
         url: basePath + '/PagoFacturas/ConsumoPlaceToPay',
+        data: obj,
+        dataType: 'JSON',
+        success: function (data) {
+            console.log(data);
+            if (data.Codigo == 1) {
+                requestIdPlaceToPay = data.Object.requestId;
+                window.location.href = data.Object.processUrl;
+
+            } else {
+                Swal.fire(
+                    'Error!',
+                    data.Mensaje,
+                    'error'
+                )
+            }
+        },
+        error: function (response) {
+            vex.dialog.alert(response.message);
+            debugger;
+        }
+    });
+}
+// FN PAGO 1CERO1   
+fnPago1Cero1 = function (obj) {
+    $.ajax({
+        async: false,
+        type: 'POST',
+        url: basePath + '/PagoFacturas/Consumo1Cero1',
         data: obj,
         dataType: 'JSON',
         success: function (data) {
@@ -478,6 +521,8 @@ fnValidationFactura = function (UrlConsulta, obj) {
                                 fnPagoPlaceToPay(obj);
                             } else if (btnSelected == "Wompi") {
                                 fnPagoWompi(obj);
+                            } else if (btnSelected == "1Cero1") {
+                                fnPago1Cero1(obj);
                             }
                         } else {
                             Swal.fire(
@@ -550,6 +595,10 @@ fnCargarFacturas = function (UrlConsulta, showLoading) {
                         theDivP.className = classContent.replace("hiddenDiv", "").trim();
                     } else if (element == 3) {
                         var theDiv = document.getElementById("divZpagos");
+                        var classContent = theDiv.className;
+                        theDiv.className = classContent.replace("hiddenDiv", "").trim();
+                    } else if (element == 4) {
+                        var theDiv = document.getElementById("div1Cero1");
                         var classContent = theDiv.className;
                         theDiv.className = classContent.replace("hiddenDiv", "").trim();
                     }
