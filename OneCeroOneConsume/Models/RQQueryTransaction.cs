@@ -7,8 +7,10 @@ namespace OneCeroOneConsume.Models
 {
     public class RQQueryTransaction
     {
-        private string CodigoEntidad{ get; set; }
-        private float Factura { get; set; }
-        private int IDImpuesto { get; set; }
+        public string CodigoEntidad { get; set; }
+        public string Factura { get; set; }
+        public int IDImpuesto { get; set; }
+
+        public RQQueryTransaction(){}
     }
 }

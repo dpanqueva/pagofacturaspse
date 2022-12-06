@@ -124,6 +124,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResponseError.cs" />
     <Compile Include="Models\RQLoginModel.cs" />
     <Compile Include="Models\RQPagador.cs" />
     <Compile Include="Models\RQPayLoadPay.cs" />

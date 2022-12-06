@@ -7,16 +7,16 @@ namespace OneCeroOneConsume.Models
 {
     public class RSQueryTransaction
     {
-        private int CodigoBanco { get; }
-        private float total { get; }
-        private DateTime FechaTransaccion { get; }
-        private DateTime FechaRespuestaBanco { get; }
-        private string Identificacion { get; }
-        private string CUS { get; }
-        private string CicloTransaccion { get; }
-        private char EstadoTransaccion { get; }
-        private string IP { get; }
-        private string Factura { get; }
-        private string MedioPago { get; }
+        private int CodigoBanco { get; set; }
+        private decimal Total { get; set; }
+        private DateTime FechaTransaccion { get; set; }
+        private DateTime FechaRespuestaBanco { get; set; }
+        private string Identificacion { get; set; }
+        private string CUS { get; set; }
+        private string CicloTransaccion { get; set; }
+        private char EstadoTransaccion { get; set; }
+        private string IP { get; set; }
+        private string Factura { get; set; }
+        private string MedioPago { get; set; }
     }
 }

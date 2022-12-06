@@ -66,9 +66,19 @@ namespace OneCeroOneConsume.Controllers
                             }
                             else
                             {
-
+                                rs.Codigo = int.Parse(response_.StatusCode.ToString());
+                                rs.IDTransaccion = 0;
+                                rs.Mensaje = "No se pudo completar el consumo al servicio";
+                                rs.URL = "";
                             }
                             httpClient.Dispose();
+                        }
+                        else
+                        {
+                            rs.Codigo = 400;
+                            rs.IDTransaccion = 0;
+                            rs.Mensaje = "Token no encontrado, el campo token es obligatorio";
+                            rs.URL = "";
                         }
                     }
                 }
@@ -76,6 +86,10 @@ namespace OneCeroOneConsume.Controllers
                 {
                     /** response definition when exist an error**/
                     // se debe definir una respuesta general o propia
+                    rs.Codigo = 500;
+                    rs.IDTransaccion = 0;
+                    rs.Mensaje = ex.Message;
+                    rs.URL = "";
                     throw new Exception("OneCeroOneController :: TransactionAPIPayment", ex);
                 }
 
@@ -127,7 +141,7 @@ namespace OneCeroOneConsume.Controllers
                     else
                     {
                         /** response definition when exist an error**/
-
+                        return "";
                     }
                     httpClient.Dispose();
                 }
@@ -141,15 +155,15 @@ namespace OneCeroOneConsume.Controllers
             return token;
         }
 
-        public async Task<object> TransactionQueryPayment()
+        public async Task<object> TransactionQueryPayment(RQQueryTransaction rqPayLoadQuery)
         {
+            /**create session with token*/
+            var token = Task.Run(async () => await BuildTokenAsync()).GetAwaiter().GetResult();
             using (var client = new System.Net.Http.HttpClient())
             {
                 RSQueryTransaction rs = new RSQueryTransaction();
                 try
                 {
-                    /**create session with token*/
-                    var token = await BuildTokenAsync();
                     var serializer = new JsonSerializer();
                     using (var request_ = new HttpRequestMessage())
                     {
@@ -157,11 +171,11 @@ namespace OneCeroOneConsume.Controllers
                        
                         if (!token.Equals(""))
                         {
-                            RQQueryTransaction rqPayLoadQuery = new RQQueryTransaction();
-                            request_.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
-                            request_.Content.Headers.Add("Authorization", "Bearer " + token);
+                            
+                            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                             request_.Method = new HttpMethod("GET");
-                            Uri myUriLog = new Uri(BASE_URL + "transaction" + "");
+                            //request_.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
+                            Uri myUriLog = new Uri(BASE_URL + "transaction" + buildUrlQuery(rqPayLoadQuery));
                             request_.RequestUri = myUriLog;
                             httpClient.Timeout = TimeSpan.FromMinutes(20);
                             var response_ = await httpClient.SendAsync(request_, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
@@ -180,7 +194,10 @@ namespace OneCeroOneConsume.Controllers
                             }
                             else
                             {
-
+                                ResponseError rse = new ResponseError();
+                                rse.CodigoError = response_.StatusCode.ToString();
+                                rse.Mensaje = "No se pudo consumir el servicio";
+                                return rse;
                             }
                             httpClient.Dispose();
                         }
@@ -190,14 +207,37 @@ namespace OneCeroOneConsume.Controllers
                 {
                     /** response definition when exist an error**/
                     // se debe definir una respuesta general o propia
+                    ResponseError rse = new ResponseError();
+                    rse.CodigoError = "500";
+                    rse.Mensaje = "Error inesperado, no se pudo consumir el servicio";
                     throw new Exception("OneCeroOneController :: TransactionQueryPayment", ex);
                 }
-
 
                 return rs;
             }
 
+            
+
         }
+
+        /*
+         * Method for build url path transaction
+         * @return new instance string with the url
+         * 
+         * **/
+        private string buildUrlQuery(RQQueryTransaction rq) 
+        {
+            // se construye así porque no sabemos si estos son obligatorios o no, asumimos 
+            // que si lo son
+            StringBuilder url = new StringBuilder();
+            if (rq.CodigoEntidad != null && rq.Factura != null && rq.IDImpuesto < 1) {
+                url.Append("?").Append("CodigoEntidad=").Append(rq.CodigoEntidad)
+                    .Append("&").Append("Factura=").Append(rq.Factura)
+                    .Append("&").Append("IDImpuesto=").Append(rq.IDImpuesto);
+            }
+            return url.ToString();
+        }
+
     }
 
 }

@@ -588,6 +588,11 @@ namespace PCTWebFactura.Classes
                 rqPayLoadPay.TipoImplementacion = 0;
 
                 var response = ococ.TransactionAPIPayment(rqPayLoadPay);
+                RQQueryTransaction rqPayLoadQuery = new RQQueryTransaction();
+                rqPayLoadQuery.CodigoEntidad = invoice.COD_FACTURA;
+                rqPayLoadQuery.Factura = invoice.ID_MFACTURA;
+                rqPayLoadQuery.IDImpuesto = 0;
+                var responseQuery = ococ.TransactionQueryPayment(rqPayLoadQuery);
                 /*model.buyer = new buyer();
                 model.buyer.name = Nombre;
                 model.buyer.surname = Apellido;
