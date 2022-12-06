@@ -7,15 +7,16 @@ namespace OneCeroOneConsume.Models
 {
     public class RQPayLoadPay
     {
-        private string Referencia { get;}
-        private string Factura { get; }
-        private decimal Total { get; }
-        private string CodigoEntidad { get; }
-        private int IDImpuesto { get; }
-        private int FuentePago { get; }
-        private int TipoImplementacion { get; }
-        private RQPagador Pagador { get; }
+        public string Referencia { get; set; }
+        public string Factura { get; set; }
+        public decimal Total { get; set; }
+        public string CodigoEntidad { get; set; }
+        public int IDImpuesto { get; set; }
+        public int FuentePago { get; set; }
+        public int TipoImplementacion { get; set; }
+        public RQPagador Pagador { get; set; }
 
+        /*
         public RQPayLoadPay() { }
 
         public RQPayLoadPay(string Referencia, string Factura, decimal Total, string CodigoEntidad
@@ -28,6 +29,6 @@ namespace OneCeroOneConsume.Models
             this.FuentePago = FuentePago;
             this.TipoImplementacion = TipoImplementacion;
             this.Pagador = Pagador;
-        }
+        }*/
     }
 }

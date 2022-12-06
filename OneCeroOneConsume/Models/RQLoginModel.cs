@@ -8,12 +8,12 @@ namespace OneCeroOneConsume.Models
 
     public class RQLoginModel
     {
-        private string Username { get;  }
-        private string Password { get; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
-        public RQLoginModel(string Username, string Password) {
+       /* public RQLoginModel(string Username, string Password) {
             this.Username = Username;
             this.Password = Password;
-        }
+        }*/
     }
 }

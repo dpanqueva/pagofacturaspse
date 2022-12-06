@@ -7,8 +7,10 @@ namespace OneCeroOneConsume.Models
 {
     public class RSPayOneCeroOne
     {
-        private int Codigo { get; }
-        private string URL { get; }
-        private string Mensaje { get; }
+
+        public int Codigo { get; set; }
+        public int IDTransaccion { get; set; }
+        public string URL { get; set; }
+        public string Mensaje { get; set; }
     }
 }

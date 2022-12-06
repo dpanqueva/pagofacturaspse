@@ -7,19 +7,19 @@ namespace OneCeroOneConsume.Models
 {
     public class RQPagador
     {
-        private int TipoDocumento { get; }
-        private string Identificacion { get; }
-        private string Nombre { get; }
-        private string Email { get; }
-        private string Telefono { get; } 
+        public int TipoDocumento { get; set; }
+        public string Identificacion { get; set; }
+        public string Nombre { get; set; }
+        public string Email { get; set; }
+        public string Telefono { get; set; } 
 
-        public RQPagador() { }
+        /*public RQPagador() { }
         public RQPagador(int TipoDocumento, string Identificacion, string Nombre, string Email, string Telefono) {
             this.TipoDocumento = TipoDocumento;
             this.Identificacion = Identificacion;
             this.Nombre = Nombre;
             this.Email = Email;
             this.Telefono = Telefono;
-        }
+        }*/
     }
 }

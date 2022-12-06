@@ -569,10 +569,24 @@ namespace PCTWebFactura.Classes
                         break;
                 }
                 var invoice = obj.itemSelected;
-                RQPagador pagador = new RQPagador(1,Nit,Nombre,obj.email,obj.telefono);
+                RQPagador pagador = new RQPagador();
+                pagador.Email = obj.email;
+                pagador.Identificacion = Nit;
+                pagador.Nombre = Nombre;
+                pagador.Telefono = obj.telefono;
+                pagador.TipoDocumento = 1;
+
                 decimal total = decimal.Parse(invoice.TOTAL_PAGO, CultureInfo.InvariantCulture.NumberFormat);
-                RQPayLoadPay rqPayLoadPay = new RQPayLoadPay(invoice.COD_FACTURA, invoice.COD_FACTURA
-                    , total, "1", 0, 0, 0, pagador);
+                RQPayLoadPay rqPayLoadPay = new RQPayLoadPay();
+                rqPayLoadPay.Pagador = pagador;
+                rqPayLoadPay.Referencia = invoice.COD_FACTURA;
+                rqPayLoadPay.Factura = invoice.ID_MFACTURA;
+                rqPayLoadPay.Total = total;
+                rqPayLoadPay.CodigoEntidad = "1";
+                rqPayLoadPay.IDImpuesto = 0;
+                rqPayLoadPay.FuentePago = 0;
+                rqPayLoadPay.TipoImplementacion = 0;
+
                 var response = ococ.TransactionAPIPayment(rqPayLoadPay);
                 /*model.buyer = new buyer();
                 model.buyer.name = Nombre;
