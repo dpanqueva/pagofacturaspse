@@ -128,6 +128,8 @@
     <Compile Include="Models\RQPagador.cs" />
     <Compile Include="Models\RQPayLoadPay.cs" />
     <Compile Include="Models\RSPayOneCeroOne.cs" />
+    <Compile Include="Models\RQQueryTransaction.cs" />
+    <Compile Include="Models\RSQueryTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

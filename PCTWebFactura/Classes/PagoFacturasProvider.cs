@@ -27,6 +27,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using OneCeroOneConsume.Models;
+using System.Globalization;
 
 namespace PCTWebFactura.Classes
 {
@@ -492,7 +494,7 @@ namespace PCTWebFactura.Classes
                 ModelToSend model = new ModelToSend();
                 OneCeroOneController ococ = new OneCeroOneController();
                 
-                ConsumoPlaceToPayController cptp = new ConsumoPlaceToPayController();
+                //ConsumoPlaceToPayController cptp = new ConsumoPlaceToPayController();
                 var Nombre = "";
                 var Apellido = "";
                 var tipod = "";
@@ -566,7 +568,13 @@ namespace PCTWebFactura.Classes
                         Apellido = "NIT-";
                         break;
                 }
-                model.buyer = new buyer();
+                var invoice = obj.itemSelected;
+                RQPagador pagador = new RQPagador(1,Nit,Nombre,obj.email,obj.telefono);
+                decimal total = decimal.Parse(invoice.TOTAL_PAGO, CultureInfo.InvariantCulture.NumberFormat);
+                RQPayLoadPay rqPayLoadPay = new RQPayLoadPay(invoice.COD_FACTURA, invoice.COD_FACTURA
+                    , total, "1", 0, 0, 0, pagador);
+                var response = ococ.TransactionAPIPayment(rqPayLoadPay);
+                /*model.buyer = new buyer();
                 model.buyer.name = Nombre;
                 model.buyer.surname = Apellido;
                 model.buyer.email = obj.email;
@@ -583,19 +591,20 @@ namespace PCTWebFactura.Classes
                 //model.returnUrl = "http://claro.pctltda.com/PCTWEBFacturaDotNet/PagoFacturas";
                 model.returnUrl = "https://localhost:44352/PagoFacturas";
                 model.userAgent = "Chrome";
-                model.paymentMethod = null;
+                model.paymentMethod = null;*/
 
-                Response response = cptp.CrearSesionPlaceToPayAsync(model).Result;
-                respuesta.Codigo = response.status.status == "OK" ? 1 : 0;
+                //Response response = cptp.CrearSesionPlaceToPayAsync(model).Result;
+                //respuesta.Codigo = response.status.status == "OK" ? 1 : 0;
+                respuesta.Codigo = 1;
                 if (respuesta.Codigo == 1)
                 {
-                    RegistrarBitacora(obj, false, response.requestId);
+                    RegistrarBitacora(obj, false, "1231321");
                 }
                 else
                 {
                     RegistrarBitacora(obj, true, "");
                 }
-                respuesta.Mensaje = response.status.message;
+                respuesta.Mensaje = "Mensaje";//response.status.message;
                 respuesta.Object = response;
                 return respuesta;
             }

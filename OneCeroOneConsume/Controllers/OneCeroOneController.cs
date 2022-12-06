@@ -22,7 +22,7 @@ namespace OneCeroOneConsume.Controllers
          * Method for send the request pay to api 1cero1
          * @return new instance with response from api 1cero1
          */
-        public async Task<RSPayOneCeroOne> TransactionAPIPayment()
+        public async Task<object> TransactionAPIPayment(RQPayLoadPay rqPayLoadPay)
         {
 
             using (var client = new System.Net.Http.HttpClient())
@@ -38,8 +38,6 @@ namespace OneCeroOneConsume.Controllers
                         var token = BuildTokenAsync();
                         if (!token.Equals(""))
                         {
-                            RQPayLoadPay rqPayLoadPay = new RQPayLoadPay();
-                            // ¿Cómo se recibe este objeto desde el front?
                             var jsonString = new StringContent(JsonConvert.SerializeObject(rqPayLoadPay), Encoding.UTF8, "application/json");
                             request_.Content = jsonString;
                             request_.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
@@ -74,7 +72,7 @@ namespace OneCeroOneConsume.Controllers
                 {
                     /** response definition when exist an error**/
                     // se debe definir una respuesta general o propia
-                    throw new Exception("ConsumoPlaceToPayController :: ConsultarSesionPlaceToPay", ex);
+                    throw new Exception("OneCeroOneController :: TransactionAPIPayment", ex);
                 }
 
 
@@ -92,14 +90,13 @@ namespace OneCeroOneConsume.Controllers
             try
             {
                 var serializer = new JsonSerializer();
-
-
                 using (var request_ = new HttpRequestMessage())
                 {
                     HttpClient httpClient = new HttpClient();
                     RQLoginModel rqSession = new RQLoginModel("HLF26+ab0xEMPbPlEBe1cl2dNkVtolspdhG+3K3t6e8=", "HLF26+ab0xEMPbPlEBe1ci4JWvvUJsZagnsjbRJZWPn14keMkZIoEyomwLIE/oo+");
                     var jsonString = new StringContent(JsonConvert.SerializeObject(rqSession), Encoding.UTF8, "application/json");
-                    request_.Content = jsonString;
+                    //request_.Content = jsonString;
+                    request_.Content = new StringContent("{\"name\":\"John Doe\",\"age\":33}", Encoding.UTF8, "application/json");
                     request_.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
                     request_.Method = new HttpMethod("POST");
                     Uri myUriLog = new Uri(BASE_URL + "Login/authenticate");
@@ -131,13 +128,13 @@ namespace OneCeroOneConsume.Controllers
             catch (Exception ex)
             {
                 // se debe definir una respuesta general o propia
-                throw new Exception("ConsumoPlaceToPayController :: ConsultarSesionPlaceToPay", ex);
+                throw new Exception("OneCeroOneController :: BuildTokenAsync", ex);
             }
 
             return token;
         }
 
-        public async Task<RSQueryTransaction> TransactionQueryPayment()
+        public async Task<object> TransactionQueryPayment()
         {
             using (var client = new System.Net.Http.HttpClient())
             {
@@ -185,7 +182,7 @@ namespace OneCeroOneConsume.Controllers
                 {
                     /** response definition when exist an error**/
                     // se debe definir una respuesta general o propia
-                    throw new Exception("ConsumoPlaceToPayController :: ConsultarSesionPlaceToPay", ex);
+                    throw new Exception("OneCeroOneController :: TransactionQueryPayment", ex);
                 }
 
 
