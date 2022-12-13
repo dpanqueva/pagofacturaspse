@@ -174,7 +174,6 @@ namespace OneCeroOneConsume.Controllers
                             
                             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                             request_.Method = new HttpMethod("GET");
-                            //request_.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
                             Uri myUriLog = new Uri(BASE_URL + "transaction" + buildUrlQuery(rqPayLoadQuery));
                             request_.RequestUri = myUriLog;
                             httpClient.Timeout = TimeSpan.FromMinutes(20);

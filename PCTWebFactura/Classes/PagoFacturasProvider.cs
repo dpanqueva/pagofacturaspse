@@ -582,16 +582,16 @@ namespace PCTWebFactura.Classes
                 rqPayLoadPay.Referencia = invoice.COD_FACTURA;
                 rqPayLoadPay.Factura = invoice.ID_MFACTURA;
                 rqPayLoadPay.Total = total;
-                rqPayLoadPay.CodigoEntidad = "1";
-                rqPayLoadPay.IDImpuesto = 0;
+                rqPayLoadPay.CodigoEntidad = "832000171";
+                rqPayLoadPay.IDImpuesto = 214;
                 rqPayLoadPay.FuentePago = 0;
                 rqPayLoadPay.TipoImplementacion = 0;
 
                 var response = ococ.TransactionAPIPayment(rqPayLoadPay);
                 RQQueryTransaction rqPayLoadQuery = new RQQueryTransaction();
-                rqPayLoadQuery.CodigoEntidad = invoice.COD_FACTURA;
+                rqPayLoadQuery.CodigoEntidad = "832000171";
                 rqPayLoadQuery.Factura = invoice.ID_MFACTURA;
-                rqPayLoadQuery.IDImpuesto = 0;
+                rqPayLoadQuery.IDImpuesto = 214;
                 var responseQuery = ococ.TransactionQueryPayment(rqPayLoadQuery);
                 /*model.buyer = new buyer();
                 model.buyer.name = Nombre;
@@ -617,7 +617,8 @@ namespace PCTWebFactura.Classes
                 respuesta.Codigo = 1;
                 if (respuesta.Codigo == 1)
                 {
-                    RegistrarBitacora(obj, false, "1231321");
+                    var d = (RSPayOneCeroOne)response.Result;
+                    RegistrarBitacora(obj, false, d.IDTransaccion.ToString());
                 }
                 else
                 {

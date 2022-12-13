@@ -948,9 +948,9 @@ C:\Users\administrator\Documents\GID\PasarelasPSE\GITHUB\pagofacturaspse\PCTWebF
 C:\Users\administrator\Documents\GID\PasarelasPSE\GITHUB\pagofacturaspse\PCTWebFactura\obj\Debug\PCTWebFactura.csproj.CopyComplete
 C:\Users\administrator\Documents\GID\PasarelasPSE\GITHUB\pagofacturaspse\PCTWebFactura\obj\Debug\PCTWebFactura.dll
 C:\Users\administrator\Documents\GID\PasarelasPSE\GITHUB\pagofacturaspse\PCTWebFactura\obj\Debug\PCTWebFactura.pdb
-D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\bin\libgrpc_csharp_ext.x64.so
 D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\bin\grpc_csharp_ext.x86.dll
 D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\bin\grpc_csharp_ext.x64.dll
+D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\bin\libgrpc_csharp_ext.x64.so
 D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\bin\libgrpc_csharp_ext.x64.dylib
 D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\bin\PCTWebFactura.dll.config
 D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\bin\PCTWebFactura.dll
@@ -1093,3 +1093,4 @@ D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\obj\De
 D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\obj\Debug\PCTWebFactura.csproj.CopyComplete
 D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\obj\Debug\PCTWebFactura.dll
 D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\obj\Debug\PCTWebFactura.pdb
+D:\Documentos\ApiNet\repo\github-comparitdo\pagofacturaspse\PCTWebFactura\bin\roslyn\csc.exe
