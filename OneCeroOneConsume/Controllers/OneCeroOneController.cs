@@ -174,7 +174,8 @@ namespace OneCeroOneConsume.Controllers
                             
                             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                             request_.Method = new HttpMethod("GET");
-                            Uri myUriLog = new Uri(BASE_URL + "transaction" + buildUrlQuery(rqPayLoadQuery));
+                            string url = BASE_URL + "transaction" + buildUrlQuery(rqPayLoadQuery);
+                            Uri myUriLog = new Uri(url);
                             request_.RequestUri = myUriLog;
                             httpClient.Timeout = TimeSpan.FromMinutes(20);
                             var response_ = await httpClient.SendAsync(request_, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
@@ -229,7 +230,7 @@ namespace OneCeroOneConsume.Controllers
             // se construye así porque no sabemos si estos son obligatorios o no, asumimos 
             // que si lo son
             StringBuilder url = new StringBuilder();
-            if (rq.CodigoEntidad != null && rq.Factura != null && rq.IDImpuesto < 1) {
+            if (rq.CodigoEntidad != null && rq.Factura != null && rq.IDImpuesto > 0) {
                 url.Append("?").Append("CodigoEntidad=").Append(rq.CodigoEntidad)
                     .Append("&").Append("Factura=").Append(rq.Factura)
                     .Append("&").Append("IDImpuesto=").Append(rq.IDImpuesto);
